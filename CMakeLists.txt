@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
-project(test_prj)
+project(Fastest-LIS-Algorithm)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(test_prj main.cpp)
+add_executable(Fastest-LIS-Algorithm main.cpp)
