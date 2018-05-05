@@ -43,23 +43,9 @@ void lis(
  */
 void printArray(int array[], int length);
 
-void createRandomArray(int *&array, int *&length) {
-    srand(static_cast<unsigned int>(time(nullptr)));
-    if(!length) {
-        length = new int(rand() % 600000);
-    }
-    array = new int[*length];
-    for (int i = 0; i < *length; ++i) {
-        array[i] = rand() % *length - *length/2;
-    }
-}
+void createRandomArray(int *&array, int *&length);
 
-void useTypeArray(int *&array, int *&length) {
-    length = new int;
-    cin >> *length;
-    array = new int[*length];
-    for(int i = 0; i < *length; ++i) cin >> array[i];
-}
+void useTypeArray(int *&array, int *&length);
 
 int main(int argc, char **argv) {
     int *inputArr;
@@ -162,4 +148,22 @@ void printArray(int array[], int length) {
         }
     }
     cout << setw(6) << array[length] << "}" << endl;
+}
+
+void useTypeArray(int *&array, int *&length) {
+    length = new int;
+    cin >> *length;
+    array = new int[*length];
+    for(int i = 0; i < *length; ++i) cin >> array[i];
+}
+
+void createRandomArray(int *&array, int *&length) {
+    srand(static_cast<unsigned int>(time(nullptr)));
+    if(!length) {
+        length = new int(rand() % 600000);
+    }
+    array = new int[*length];
+    for (int i = 0; i < *length; ++i) {
+        array[i] = rand() % *length - *length/2;
+    }
 }
